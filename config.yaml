@@ -7,3 +7,5 @@ database:
   dbname: "order_db"
   sslmode: "disable"
   timeZone: "Asia/Calcutta"
+serverConfig: 
+  serverPort: 8080

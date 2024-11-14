@@ -25,7 +25,7 @@ type AppConfig struct {
 }
 
 type ServerConfig struct {
-	ServerPort string `yaml:"serverPort"`
+	ServerPort int `yaml:"serverPort"`
 }
 
 func LoadConfiguration(pathOfYaml string) (*AppConfig, error) {

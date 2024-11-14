@@ -27,7 +27,7 @@ func (g *Gateway) RegisterGateWayService(cfg *config.AppConfig, db database.Data
 
 	r := gin.Default()
 	apiRouter := routers.NewRouter()
-	apiRouter.RegisterRoutes(r, cfg, db)
+	apiRouter.RegisterRoutes(r, db)
 
 	// http server config
 	srv := &http.Server{
@@ -42,6 +42,7 @@ func (g *Gateway) RegisterGateWayService(cfg *config.AppConfig, db database.Data
 	signalChan := make(chan os.Signal, 1)
 	signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM)
 
+	// running in new goroutine to make main funtion free
 	go func() {
 		log.Println("Server started successfully on port", cfg.ServerConfig.ServerPort)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
