@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/lakshay88/lakshay_OrderProcessingSystem/config"
+	"github.com/lakshay88/lakshay_OrderProcessingSystem/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -45,5 +46,19 @@ func ConnectDatabase(cfg *config.DatabaseConfig) (*PostgresDB, error) {
 		return nil, fmt.Errorf("failed to ping database: %w", err)
 	}
 
+	// migrations
+	if err := db.AutoMigrate(&models.Customer{}, &models.Product{}, &models.Order{}); err != nil {
+		return nil, fmt.Errorf("failed to run migrations: %w", err)
+	}
+
+	log.Println("Database connected and migrated successfully")
 	return &PostgresDB{DB: db}, nil
+}
+
+func (db *PostgresDB) Close() error {
+	sqlDB, err := db.DB.DB()
+	if err != nil {
+		return fmt.Errorf("failed to get sql.DB from GORM: %w", err)
+	}
+	return sqlDB.Close()
 }

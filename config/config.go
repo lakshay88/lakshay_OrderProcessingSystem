@@ -20,7 +20,12 @@ type DatabaseConfig struct {
 }
 
 type AppConfig struct {
-	Database DatabaseConfig `yaml:"database"`
+	Database     DatabaseConfig `yaml:"database"`
+	ServerConfig ServerConfig   `yaml:"serverConfig"`
+}
+
+type ServerConfig struct {
+	ServerPort string `yaml:"serverPort"`
 }
 
 func LoadConfiguration(pathOfYaml string) (*AppConfig, error) {

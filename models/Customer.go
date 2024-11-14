@@ -1,14 +1,10 @@
 package models
 
-import (
-	"time"
-)
+import "gorm.io/gorm"
 
 type Customer struct {
-	ID        uint    `gorm:"primaryKey"`
-	Name      string  `gorm:"type:varchar(100);not null"`
-	Email     string  `gorm:"type:varchar(100);uniqueIndex;not null"`
-	Orders    []Order `gorm:"foreignKey:CustomerID"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	gorm.Model
+	Name   string  `json:"name" gorm:"not null"`
+	Email  string  `json:"email" gorm:"unique;not null"`
+	Orders []Order `json:"orders" gorm:"foreignKey:CustomerID"`
 }

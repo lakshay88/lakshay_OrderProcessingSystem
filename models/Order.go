@@ -1,14 +1,11 @@
 package models
 
-import "time"
+import "gorm.io/gorm"
 
 type Order struct {
-	ID         uint      `gorm:"primaryKey"`
-	CustomerID uint      `gorm:"not null"`
-	Customer   Customer  `gorm:"foreignKey:CustomerID"`
-	Status     string    `gorm:"type:varchar(20);default:'unfulfilled'"`
-	TotalPrice float64   `gorm:"not null"`
-	Products   []Product `gorm:"many2many:order_products;"`
-	CreatedAt  time.Time
-	UpdatedAt  time.Time
+	gorm.Model
+	CustomerID uint      `json:"customer_id" gorm:"not null"`
+	Products   []Product `json:"products" gorm:"many2many:order_products;"`
+	TotalPrice float64   `json:"total_price"`
+	Status     string    `json:"status" gorm:"default:'pending'"`
 }
