@@ -1,0 +1,9 @@
+database:
+  driver: "postgres"
+  host: "localhost"
+  port: 5432
+  user: "good-user"
+  password: "good-password"
+  dbname: "order_db"
+  sslmode: "disable"
+  timeZone: "Asia/Calcutta"
