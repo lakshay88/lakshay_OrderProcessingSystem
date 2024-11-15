@@ -45,8 +45,10 @@ In repo you will find ```order-serving-system.postman_collection.json``` It is a
 8. `Docker`: Currently system is can be run using docker no need to install SQL in system.  
 
 # Future Improvements
-  Add user authentication and authorization.
-  Add test case(currently not)
-  Improve validation and error handling with more detailed messages.
-  We can segirigate each service in microservice.
-  Add asynchronous processing for order-related tasks.
+1. Add user authentication and authorization.
+2. Add test case(currently not)
+3. Improve validation and error handling with more detailed messages.
+4. We can segirigate each service in microservice.
+5. Add asynchronous processing for order-related tasks.
+6. We can create a central logging so all the logs will be update properly.
+
