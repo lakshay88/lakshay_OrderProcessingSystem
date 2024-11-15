@@ -46,16 +46,10 @@
 			"name": "CreateOrder",
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMyIsInVzZXJuYW1lIjoidGVzdF8yIiwiZW1haWwiOiJ0ZXN0MkBnbWFpbC5jb20iLCJleHAiOjE3Mjg4OTY0ODN9.5x2T-QS5Cvcly0XHs66D5dxZ1DI1_8KUtI4CeYeYUP8",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"customer_id\": 1,\n    \"product_ids\": [1, 2, 3],\n    \"total_price\": 99.99,\n    \"status\": \"pending\"\n}",
+					"raw": "{\n    \"customer_id\": 2,\n    \"product_ids\": [1, 2, 3],\n    \"status\": \"pending\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,9 +80,10 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMyIsInVzZXJuYW1lIjoidGVzdF8yIiwiZW1haWwiOiJ0ZXN0MkBnbWFpbC5jb20iLCJleHAiOjE3Mjg4OTY0ODN9.5x2T-QS5Cvcly0XHs66D5dxZ1DI1_8KUtI4CeYeYUP8",
-						"type": "text"
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
@@ -125,8 +120,9 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMyIsInVzZXJuYW1lIjoidGVzdF8yIiwiZW1haWwiOiJ0ZXN0MkBnbWFpbC5jb20iLCJleHAiOjE3Mjg4OTY0ODN9.5x2T-QS5Cvcly0XHs66D5dxZ1DI1_8KUtI4CeYeYUP8",
-						"type": "text"
+						"value": "",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
@@ -163,13 +159,7 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMyIsInVzZXJuYW1lIjoidGVzdF8yIiwiZW1haWwiOiJ0ZXN0MkBnbWFpbC5jb20iLCJleHAiOjE3Mjg1Nzk3NzV9.7_9g6eD1sbIIZ0WfHrE4r6xyf-Hy3OFVKtO5VH98K50",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"username\": \"test_2\",\n    \"email\": \"test2@gmail.com\",\n    \"password\": \"Stock@123\"\n}",
