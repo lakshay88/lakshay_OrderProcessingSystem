@@ -50,5 +50,5 @@ In repo you will find ```order-serving-system.postman_collection.json``` It is a
 3. Improve validation and error handling with more detailed messages.
 4. We can segirigate each service in microservice.
 5. Add asynchronous processing for order-related tasks.
-6. We can create a central logging so all the logs will be update properly.
+6. We can create a central logging so all the logs will be update properly. This logger can we run on differnt go routine to my main there will not be busy. 
 
